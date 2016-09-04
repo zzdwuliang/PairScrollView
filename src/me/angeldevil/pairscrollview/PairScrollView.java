@@ -71,6 +71,14 @@ public class PairScrollView extends ViewGroup {
         }
     }
 
+    public void smoothScrollToSecondView(int duration) {
+        View second = getChildAt(1);
+        if (second != null) {
+            mScroller.startScroll(0, getScrollY(), 0, getHeight(), duration);
+            computeScroll();
+        }
+    }
+
     public void setOnScrollListener(OnScrollListener listener) {
         mOnScrollListener = listener;
     }
